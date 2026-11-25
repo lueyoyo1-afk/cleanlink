@@ -1,0 +1,117 @@
+{
+  "version": 3,
+  "updated": "2026-11-25",
+  "globalDrop": [
+    "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "utm_id",
+    "utm_source_platform", "utm_creative_format", "utm_marketing_tactic",
+    "spm", "spm_id_from", "spmid", "scm", "from", "from_source", "from_spmid", "from_ssr",
+    "share_source", "share_medium", "share_plat", "share_session_id", "share_tag",
+    "share_token", "share_sign", "share_version", "share_times", "share_from",
+    "share_link_id", "share_iid", "share_app_id", "share_app_name",
+    "timestamp", "ts", "unique_k", "vd_source", "refer_share_id", "refer_share_uin",
+    "refer_share_channel", "refer_share_score", "refer_page_el_sn", "refer_page_name",
+    "refer_page_id", "refer_flag", "referer", "referrer",
+    "_x_share_id", "_oak_share_time", "_oak_share_snapshot_num", "_oak_share_sign",
+    "share_uin", "sharer_sharetime", "sharer_shareid", "sharer_shareinfo",
+    "sharer_shareinfo_first", "isappinstalled", "scene", "subscene", "srcid",
+    "clicktime", "enterid", "ascene", "devicetype", "version", "nettype", "lang",
+    "exportkey", "pass_ticket", "wx_header", "sessionid", "abtest_cookie", "fontscale",
+    "previous_page", "enter_from", "enter_method", "video_share_track_ver", "schema_type",
+    "tt_from", "is_from_webapp", "sender_device", "web_id", "source", "source_type",
+    "is_story_h5", "plat_id", "seid", "broadcast_type", "buvid", "bbid", "up_id",
+    "ali_trackid", "ali_refid", "un", "share_crt_v", "cpp", "short_name", "tbSocialPopKey",
+    "sp_tk", "bxsign", "tk", "app", "ut_sk", "suid", "utparam", "abtest", "wwpartnerid",
+    "pvid", "scm_id", "ns", "si", "pp", "feature", "ab_channel", "ref_src", "ref_url",
+    "cn", "src", "sudaref", "display", "c", "s_r", "share_code", "utm_psn",
+    "appuid", "apptime", "exsource", "share_from_user_hidden", "author_share", "xhsshare",
+    "appshare", "wxshare", "weixin", "fromshare", "is_from_share"
+  ],
+  "globalDropPrefix": [
+    "utm_", "spm_", "share_", "refer_", "_oak_", "wx_", "pdd_", "ref_", "sharer_",
+    "utm-", "alichlgref", "_x_"
+  ],
+  "domains": [
+    {
+      "host": ["bilibili.com", "b23.tv"],
+      "keep": ["p", "t", "bvid", "aid", "cid", "page"],
+      "note": "p 是分P，删了直接跳回第 1 集；bvid/aid/cid 是视频定位"
+    },
+    {
+      "host": ["douyin.com", "iesdouyin.com"],
+      "keep": ["modal_id", "vid", "aweme_id", "sec_uid", "item_ids", "group_id"],
+      "note": "modal_id 是作品 ID，删了只会打开抖音首页"
+    },
+    {
+      "host": ["xiaohongshu.com"],
+      "keep": ["xsec_token", "xsec_source", "note_id"],
+      "note": "xsec_token 是笔记的访问凭证，现在的链接删了它就会提示「笔记不存在」"
+    },
+    {
+      "host": ["weibo.com", "weibo.cn"],
+      "keep": ["id", "uid", "weibo_id", "mblogid"],
+      "note": "微博正文按 path 定位，带上参数不要乱删 id"
+    },
+    {
+      "host": ["zhihu.com"],
+      "keep": ["id", "answer_id", "question_id"],
+      "note": "知乎基本全靠 path，参数几乎都能删"
+    },
+    {
+      "host": ["taobao.com", "tmall.com"],
+      "keep": ["id", "skuId", "itemId", "spuId", "sellerId"],
+      "note": "id 是商品 ID，删了链接直接打不开；skuId 决定打开哪个规格"
+    },
+    {
+      "host": ["goofish.com", "2.taobao.com"],
+      "keep": ["id", "itemId", "sellerId"],
+      "note": "闲鱼商品 ID 在 id/itemId 上"
+    },
+    {
+      "host": ["pinduoduo.com", "yangkeduo.com"],
+      "keep": ["goods_id", "goodsId", "page_from"],
+      "note": "goods_id 是商品定位"
+    },
+    {
+      "host": ["mp.weixin.qq.com"],
+      "keep": ["__biz", "mid", "idx", "sn", "chksm", "mpshare", "srcid"],
+      "note": "公众号文章靠 __biz+mid+idx+sn(+chksm) 四元组定位，缺一个都打不开"
+    },
+    {
+      "host": ["youtube.com", "youtu.be"],
+      "keep": ["v", "t", "list", "index", "start"],
+      "note": "t 是从第几秒开始播，删了就从头放；v 是视频 ID"
+    },
+    {
+      "host": ["x.com", "twitter.com"],
+      "keep": [],
+      "drop": ["s", "t", "cn", "ref_src", "ref_url", "src"],
+      "note": "X 的正文全在 path 上（/user/status/123），参数一律可删；s/t 是分享者指纹，必须删"
+    },
+    {
+      "host": ["kuaishou.com", "chenzhongtech.com"],
+      "keep": ["photoId", "userId", "shareToken"],
+      "note": "photoId 是作品定位，shareToken 是分享凭证"
+    },
+    {
+      "host": ["jd.com", "jd.hk"],
+      "keep": ["sku", "skuId", "id"],
+      "note": "京东商品主要在 path 上，参数可删"
+    },
+    {
+      "host": ["music.163.com"],
+      "keep": ["id", "userid"],
+      "note": "网易云歌曲靠 id"
+    },
+    {
+      "host": ["bilibili.tv"],
+      "keep": ["p", "bvid", "aid", "cid", "ep_id", "season_id"],
+      "note": "海外版哔哩哔哩，规则同站内"
+    }
+  ],
+  "shortHosts": [
+    "b23.tv", "v.douyin.com", "t.cn", "url.cn", "dwz.cn", "xhslink.com",
+    "m.tb.cn", "tb.cn", "e.tb.cn", "p.pinduoduo.com", "u.jd.com", "3.cn",
+    "s.click.taobao.com", "v.kuaishou.com", "w.url.cn", "sourl.cn", "mrw.so"
+  ],
+  "coinHosts": ["pinduoduo.com", "taobao.com", "tmall.com", "yangkeduo.com"]
+}

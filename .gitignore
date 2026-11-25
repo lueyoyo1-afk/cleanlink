@@ -1,0 +1,18 @@
+# 本机路径与口令
+local.properties
+
+# 签名私钥：绝不入库
+app/keystore/
+*.jks
+*.keystore
+
+# 构建产物
+.idea/
+.gradle/
+build/
+app/build/
+*.iml
+dist/
+
+# 设计原稿（生成图很大，只留最终图标）
+design/

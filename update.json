@@ -1,0 +1,12 @@
+{
+  "code": 2,
+  "name": "1.0.1",
+  "notes": "支持应用内检查更新",
+  "size": 1442346,
+  "sha256": "34d8df63183929a7784788ee0cd83940c8504ce6c632595ae027f73647af8513",
+  "signer": "47fd501b272534bdb6828214d2e57f3f5bb64558449aba3ae98322e5540e3ba2",
+  "urls": [
+    "https://github.com/lueyoyo1-afk/cleanlink/releases/download/v1.0.1/cleanlink-1.0.1.apk",
+    "https://ghfast.top/https://github.com/lueyoyo1-afk/cleanlink/releases/download/v1.0.1/cleanlink-1.0.1.apk"
+  ]
+}
